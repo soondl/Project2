@@ -1,11 +1,19 @@
 # SE_project2
-## 1.시작하기
+## 0.시작하기
 ```
 git clone https://github.com/soondl/SE_project2.git
 cd SE_project2
 git checkout -b [branch_name]
 ```
 으로 개별 브랜치 생성후 작업해주세요
+
+## 1. 실행하기
+```tex1```와 ```text2```파일을 생성해두는 과정이 필요합니다.  
+
+```
+make
+./main
+```
 
 ## 2.출력예시
 ```
