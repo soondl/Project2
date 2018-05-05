@@ -98,6 +98,8 @@ void datecmp(void)
 
 	diff = t1 - t2;
 
+	printf("date compare\n");
+
 	if(diff == 0) {
 		printf("same date\n");
 	}
@@ -116,6 +118,8 @@ void timecmp(void)
 	t1 = stat1.st_mtime;
 	t2 = stat2.st_mtime;
 	diff = t1 - t2;
+
+	printf("date compare\n");
 
 	if(diff == 0) {
 		printf("same time\n");
