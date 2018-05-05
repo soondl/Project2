@@ -67,6 +67,16 @@ void filetime2(void)
 //두 개의 파일 크기를 비교하는 함수 작성
 void sizecmp(void)
 {
+  puts("size compare");
+  
+	if(stat1.st_size > stat2.st_size)
+		puts("text1 is bigger");
+	else if(stat1.st_size < stat2.st_size)
+		puts("text2 is bigger");
+	else
+		puts("sizes are equal");
+
+	return;
 }
 
 //두 개의 파일 블락 수를 비교하는 함수 작성
