@@ -98,16 +98,16 @@ void datecmp(void)
 
 	diff = t1 - t2;
 
-	printf("date compare\n");
+	puts("date compare");
 
 	if(diff == 0) {
-		printf("same date\n");
+		puts("same date\n");
 	}
 	else if(diff < 0) {
-		printf("text1 is early\n");
+		puts("text1 is early\n");
 	}
 	else {
-		printf("text2 is early\n");
+		puts("text2 is early\n");
 	}
 }
 
@@ -119,15 +119,15 @@ void timecmp(void)
 	t2 = stat2.st_mtime;
 	diff = t1 - t2;
 
-	printf("date compare\n");
+	puts("time compare");
 
 	if(diff == 0) {
-		printf("same time\n");
+		puts("same time\n");
 	}
 	else if(diff < 0) {
-		printf("text1 is early\n");
+		puts("text1 is early\n");
 	}
 	else {
-		printf("text2 is early\n");
+		puts("text2 is early\n");
 	}
 }
