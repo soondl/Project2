@@ -78,23 +78,23 @@ void blockcmp(void)
 void datecmp(void)
 {
 	time_t t1, t2, diff;
-	struct tm *tp1, *tp2;
+	struct tm tm1, tm2;
 
 	t1 = stat1.st_mtime;
 	t2 = stat2.st_mtime;
 
-	tp1 = localtime(t1);
-	tp2 = localtime(t2);
+	tm1 = *time1;
+	tm2 = *time2;
 
-	tp1->tm_sec = 0;
-	tp1->tm_min = 0;
-	tp1->tm_hour = 0;
-	tp2->tm_sec = 0;
-	tp2->tm_min = 0;
-	tp2->tm_hour = 0;
+	tm1.tm_sec = 0;
+	tm1.tm_min = 0;
+	tm1.tm_hour = 0;
+	tm2.tm_sec = 0;
+	tm2.tm_min = 0;
+	tm2.tm_hour = 0;
 
-	t1 = mktime(tp1);
-	t2 = mktime(tp2);
+	t1 = mktime(&tm1);
+	t2 = mktime(&tm2);
 
 	diff = t1 - t2;
 
