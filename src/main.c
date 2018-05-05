@@ -77,9 +77,53 @@ void blockcmp(void)
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
 void datecmp(void)
 {
+	time_t t1, t2, diff;
+	struct tm *tp1, *tp2;
+
+	t1 = stat1.st_mtime;
+	t2 = stat2.st_mtime;
+
+	tp1 = localtime(t1);
+	tp2 = localtime(t2);
+
+	tp1->tm_sec = 0;
+	tp1->tm_min = 0;
+	tp1->tm_hour = 0;
+	tp2->tm_sec = 0;
+	tp2->tm_min = 0;
+	tp2->tm_hour = 0;
+
+	t1 = mktime(tp1);
+	t2 = mktime(tp2);
+
+	diff = t1 - t2;
+
+	if(diff == 0) {
+		printf("same date\n");
+	}
+	else if(diff < 0) {
+		printf("text1 is early\n");
+	}
+	else {
+		printf("text2 is early\n");
+	}
 }
 
 //두 개의 파일 수정 시간을 비교하는 함수 작성
 void timecmp(void)
 {
+	time_t t1, t2, diff;
+	t1 = stat1.st_mtime;
+	t2 = stat2.st_mtime;
+	diff = t1 - t2;
+
+	if(diff == 0) {
+		printf("same time\n");
+	}
+	else if(diff < 0) {
+		printf("text1 is early\n");
+	}
+	else {
+		printf("text2 is early\n");
+	}
 }
