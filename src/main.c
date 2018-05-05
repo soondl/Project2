@@ -98,36 +98,37 @@ void blockcmp(void)
 void datecmp(void)
 {
 	time_t t1, t2, diff;
-	struct tm *tp1, *tp2;
+
+	struct tm tm1, tm2;
 
 	t1 = stat1.st_mtime;
 	t2 = stat2.st_mtime;
 
-	tp1 = localtime(t1);
-	tp2 = localtime(t2);
+	tm1 = *time1;
+	tm2 = *time2;
 
-	tp1->tm_sec = 0;
-	tp1->tm_min = 0;
-	tp1->tm_hour = 0;
-	tp2->tm_sec = 0;
-	tp2->tm_min = 0;
-	tp2->tm_hour = 0;
+	tm1.tm_sec = 0;
+	tm1.tm_min = 0;
+	tm1.tm_hour = 0;
+	tm2.tm_sec = 0;
+	tm2.tm_min = 0;
+	tm2.tm_hour = 0;
 
-	t1 = mktime(tp1);
-	t2 = mktime(tp2);
+	t1 = mktime(&tm1);
+	t2 = mktime(&tm2);
 
 	diff = t1 - t2;
 
-	printf("date compare\n");
+	puts("date compare");
 
 	if(diff == 0) {
-		printf("same date\n");
+		puts("same date\n");
 	}
 	else if(diff < 0) {
-		printf("text1 is early\n");
+		puts("text1 is early\n");
 	}
 	else {
-		printf("text2 is early\n");
+		puts("text2 is early\n");
 	}
 }
 
@@ -139,15 +140,15 @@ void timecmp(void)
 	t2 = stat2.st_mtime;
 	diff = t1 - t2;
 
-	printf("date compare\n");
+	puts("time compare");
 
 	if(diff == 0) {
-		printf("same time\n");
+		puts("same time\n");
 	}
 	else if(diff < 0) {
-		printf("text1 is early\n");
+		puts("text1 is early\n");
 	}
 	else {
-		printf("text2 is early\n");
+		puts("text2 is early\n");
 	}
 }
