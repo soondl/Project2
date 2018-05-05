@@ -76,6 +76,8 @@ void sizecmp(void)
 	else
 		puts("sizes are equal");
 
+	puts("");
+
 	return;
 }
 
@@ -90,6 +92,8 @@ void blockcmp(void)
 		puts("text2 is bigger");
 	else
 		puts("blocks are equal");
+
+	puts("");
 
 	return;
 }
