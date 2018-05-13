@@ -1,4 +1,4 @@
-# Assignmet2
+# Assignment2
 팀장
 
 2014722029 이순형(soondl)
