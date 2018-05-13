@@ -1,4 +1,14 @@
-# SE_project2
+# Assignmet2
+팀장
+
+2014722029 이순형(soondl)
+
+팀원
+
+2011722001 송민준(cocoapi)
+
+2016722083 김광연(onting)
+
 ## 0.시작하기
 ```
 git clone https://github.com/soondl/SE_project2.git
